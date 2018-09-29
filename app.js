@@ -99,7 +99,7 @@ function getMessage(t) {
 
     var t = getnow().getTime() - getToday().getTime();
 
-    var ti = h - t;
+    var ti = h - t / 60;
 
     console.log(ti);
     if (ti > 0) {
