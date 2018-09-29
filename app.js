@@ -3,6 +3,8 @@
 const http = require('http');
 const https = require('https');
 const crypto = require('crypto');
+const clova = require('@line/clova-cek-sdk-nodejs');
+
 
 const HOST = 'api.line.me';
 const REPLY_PATH = '/v2/bot/message/reply';//リプライ用
@@ -10,7 +12,6 @@ const CH_SECRET = 'ea46a5b3b13d5c720709adbc1762782c'; //Channel Secretを指定
 const CH_ACCESS_TOKEN = 'PWp2/OpgqiMmz8jeZaMXLSsYB313ElEb2BUixY7F49PR/GhZTg39VwXLXwjUF/VUvNG+N7sL1PALiN2ErfYcd3s0Vu0nedpKsZaWWqaOgXCeIvb4Yp3DSMpM8lcgAzMMp0utm5jW7ri36zmMDd5MxgdB04t89/1O/w1cDnyilFU='; //Channel Access Tokenを指定
 const SIGNATURE = crypto.createHmac('sha256', CH_SECRET);
 const PORT = process.env.PORT || 8080;
-
 /**
  * httpリクエスト部分
  */
@@ -48,6 +49,28 @@ const client = (replyToken, SendMessageObject) => {
         req.end();
     });
 };
+
+const handler = clova.Client
+    .configureSkill()
+    .onLaunchRequest(responseHelper => {
+        responseHelper.setSimpleSpeech({
+            lang: 'ja',
+            type: 'PlainText',
+            value: `遅刻チェック`,
+        });
+    })
+    .onIntentRequest(intentHandler)
+    .onSessionEndedRequest(sessionEndedHandler)
+    .handle();
+
+http.createServer((req, res) => {
+    if (req.url !== '/bot' || req.method !== 'POST') {
+        res.writeHead(200, { 'Content-Type': 'text/plain' });
+        res.end('');
+    }
+
+
+}).listen(PORT);
 
 http.createServer((req, res) => {
     if (req.url !== '/webhook' || req.method !== 'POST') {
