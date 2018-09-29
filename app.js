@@ -94,7 +94,8 @@ console.log(`Server running at ${PORT}`);
 function getMessage(t) {
     var dtl = getTimeLesson(t);
     dtl.setMinutes(dtl.getMinutes() - 30);
-    if (dtl > getToday()) {
+    var ti = dtl.getTime() - getToday().getTime() / (1000 * 60);
+    if (ti > 0) {
         return "間に合うよ";
     } else {
         return "諦めろ";
