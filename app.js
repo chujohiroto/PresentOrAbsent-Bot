@@ -9,7 +9,7 @@ const REPLY_PATH = '/v2/bot/message/reply';//リプライ用
 const CH_SECRET = 'ea46a5b3b13d5c720709adbc1762782c'; //Channel Secretを指定
 const CH_ACCESS_TOKEN = 'PWp2/OpgqiMmz8jeZaMXLSsYB313ElEb2BUixY7F49PR/GhZTg39VwXLXwjUF/VUvNG+N7sL1PALiN2ErfYcd3s0Vu0nedpKsZaWWqaOgXCeIvb4Yp3DSMpM8lcgAzMMp0utm5jW7ri36zmMDd5MxgdB04t89/1O/w1cDnyilFU='; //Channel Access Tokenを指定
 const SIGNATURE = crypto.createHmac('sha256', CH_SECRET);
-const PORT = 80;
+const PORT = 3000;
 
 /**
  * httpリクエスト部分
