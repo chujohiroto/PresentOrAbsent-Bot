@@ -93,6 +93,7 @@ console.log(`Server running at ${PORT}`);
 
 function getMessage(t) {
     var dtl = getTimeLesson(t);
+
     dtl.setMinutes(dtl.getMinutes() - 30);
 
     var h = dtl.getTime() - getnow().getTime();
@@ -142,7 +143,7 @@ function getTimeLesson(t) {
         default:
             break;
     }
-    return UTCToJST(lesson);
+    return lesson;
 }
 
 function getToday() {
@@ -153,9 +154,4 @@ function getToday() {
 function getnow() {
     var now = new Date();
     return now;
-}
-
-function UTCToJST(utc) {
-    var jst = utc.setTime(utc.getTime() + 1000 * 60 * 60 * 9);// JSTに変換
-    return jst;
 }
