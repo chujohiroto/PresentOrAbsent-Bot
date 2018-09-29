@@ -104,6 +104,7 @@ function getMessage(t) {
     //var ti = dtl.getTime() - getnow().getTime();
 
     console.log(ti);
+    //秒数で判定
     if (ti > 0) {
         return "間に合うよ";
     } else {
