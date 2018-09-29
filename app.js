@@ -94,11 +94,12 @@ console.log(`Server running at ${PORT}`);
 function getMessage(t) {
     var dtl = getTimeLesson(t);
     dtl.setMinutes(dtl.getMinutes() - 30);
+
     var h = dtl.getTime() - getnow().getTime();
 
     var t = getnow().getTime() - getToday().getTime();
 
-    var ti = h - t * (1000 * 60);
+    var ti = h - t;
 
     console.log(ti);
     if (ti > 0) {
