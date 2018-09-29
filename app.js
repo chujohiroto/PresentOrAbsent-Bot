@@ -92,12 +92,11 @@ http.createServer((req, res) => {
 console.log(`Server running at ${PORT}`);
 
 function getMessage(t) {
-    var dt = new Date();
     var dtl = getUnixTimeLesson(t);
-    console.log("Log2:" + dtl.toString());
-    dt.setMinutes(dtl + 30);
+    console.log("Log2:" + dtl);
+    dtl.setMinutes(dtl + 30);
     console.log("Log3:" + dt);
-    if (dt > getToday()) {
+    if (dtl > getToday()) {
         return "間に合うよ";
     } else {
         return "諦めろ";
