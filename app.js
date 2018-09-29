@@ -156,6 +156,6 @@ function getnow() {
 }
 
 function UTCToJST(utc) {
-    var jst = utc + (1000 * 60 * 60 * 9);
+    var jst = utc.setTime(utc.getTime() + 1000 * 60 * 60 * 9);// JSTに変換
     return jst;
 }
