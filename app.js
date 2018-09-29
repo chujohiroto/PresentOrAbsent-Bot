@@ -71,6 +71,159 @@ http.createServer((req, res) => {
             let SendMessageObject;
             if (WebhookEventObject.message.type === 'text') {
                 SendMessageObject = [{
+                    type: "flex",
+                    altText: "This is a flex message",
+                    contents: {
+                        "body": {
+                            "type": "box",
+                            "layout": "vertical",
+                            "contents": [
+                                {
+                                    "type": "text",
+                                    "text": "何限目??",
+                                    "weight": "bold",
+                                    "wrap": false,
+                                    "color": "#464646",
+                                    "flex": 1,
+                                    "size": "xl",
+                                    "margin": "none",
+                                    "align": "start",
+                                    "gravity": "top"
+                                },
+                                {
+                                    "type": "button",
+                                    "action": {
+                                        "type": "message",
+                                        "label": "1限目",
+                                        "displayText": "1限目"
+                                    },
+                                    "flex": 0,
+                                    "height": "md",
+                                    "style": "primary",
+                                    "color": "#42659a",
+                                    "gravity": "top"
+                                },
+                                {
+                                    "type": "button",
+                                    "action": {
+                                        "type": "message",
+                                        "label": "2限目",
+                                        "displayText": "2限目"
+                                    },
+                                    "flex": 0,
+                                    "height": "md",
+                                    "style": "primary",
+                                    "color": "#42659a",
+                                    "gravity": "top"
+                                },
+                                {
+                                    "type": "button",
+                                    "action": {
+                                        "type": "message",
+                                        "label": "3限目",
+                                        "displayText": "3限目"
+                                    },
+                                    "flex": 0,
+                                    "height": "md",
+                                    "style": "primary",
+                                    "color": "#42659a",
+                                    "gravity": "top"
+                                },
+                                {
+                                    "type": "button",
+                                    "action": {
+                                        "type": "message",
+                                        "label": "4限目",
+                                        "displayText": "4限目"
+                                    },
+                                    "flex": 0,
+                                    "height": "md",
+                                    "style": "primary",
+                                    "color": "#42659a",
+                                    "gravity": "top"
+                                },
+                                {
+                                    "type": "button",
+                                    "action": {
+                                        "type": "message",
+                                        "label": "5限目",
+                                        "displayText": "5限目"
+                                    },
+                                    "flex": 0,
+                                    "height": "md",
+                                    "style": "primary",
+                                    "color": "#42659a",
+                                    "gravity": "top"
+                                },
+                                {
+                                    "type": "button",
+                                    "action": {
+                                        "type": "message",
+                                        "label": "6限目",
+                                        "displayText": "6限目"
+                                    },
+                                    "flex": 0,
+                                    "height": "md",
+                                    "style": "primary",
+                                    "color": "#42659a",
+                                    "gravity": "top"
+                                },
+                                {
+                                    "type": "button",
+                                    "action": {
+                                        "type": "message",
+                                        "label": "7限目",
+                                        "displayText": "7限目"
+                                    },
+                                    "flex": 0,
+                                    "height": "md",
+                                    "style": "primary",
+                                    "color": "#42659a",
+                                    "gravity": "top"
+                                },
+                                {
+                                    "type": "button",
+                                    "action": {
+                                        "type": "message",
+                                        "label": "8限目",
+                                        "displayText": "8限目"
+                                    },
+                                    "flex": 0,
+                                    "height": "md",
+                                    "style": "primary",
+                                    "color": "#42659a",
+                                    "gravity": "top"
+                                }
+                            ],
+                            "flex": 1,
+                            "spacing": "none",
+                            "margin": "md"
+                        },
+                        "styles": {
+                            "header": {
+                                "backgroundColor": "#FFFFFF",
+                                "separator": false,
+                                "separatorColor": "#FFFFFF"
+                            },
+                            "hero": {
+                                "backgroundColor": "#FFFFFF",
+                                "separator": false,
+                                "separatorColor": "#FFFFFF"
+                            },
+                            "body": {
+                                "backgroundColor": "#FFFFFF",
+                                "separator": false,
+                                "separatorColor": "#FFFFFF"
+                            },
+                            "footer": {
+                                "backgroundColor": "#FFFFFF",
+                                "separator": false,
+                                "separatorColor": "#FFFFFF"
+                            }
+                        }
+                    },
+                }]
+                SendMessageObject = [{
                     type: 'text',
                     text: getMessage(WebhookEventObject.message.text)
                 }];
