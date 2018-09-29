@@ -72,10 +72,10 @@ http.createServer((req, res) => {
             if (WebhookEventObject.message.type === 'text') {
                 if (WebhookEventObject.message.text == "check") {
                     SendMessageObject = [{
-                        type: "flex",
-                        altText: "This is a flex message",
-                        contents: {
-                            "type": "flex",
+                        "type": "flex",
+                        "altText": "This is a flex message",
+                        "contents": {
+                            "type": "bubble",
                             "body": {
                                 "type": "box",
                                 "layout": "vertical",
