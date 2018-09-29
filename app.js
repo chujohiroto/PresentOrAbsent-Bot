@@ -101,6 +101,7 @@ function getMessage(t) {
 
     //var ti = h - t;
     var ti = dtl.getTime() - getnow().getTime();
+
     console.log(ti);
     if (ti > 0) {
         return "間に合うよ";
@@ -141,7 +142,7 @@ function getTimeLesson(t) {
         default:
             break;
     }
-    return lesson;
+    return UTCToJST(lesson);
 }
 
 function getToday() {
@@ -152,4 +153,9 @@ function getToday() {
 function getnow() {
     var now = new Date();
     return now;
+}
+
+function UTCToJST(utc) {
+    var jst = utc + (1000 * 60 * 60 * 9);
+    return jst;
 }
