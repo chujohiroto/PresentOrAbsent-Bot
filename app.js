@@ -93,7 +93,7 @@ console.log(`Server running at ${PORT}`);
 
 function getMessage(t) {
     var dtl = getUnixTimeLesson(t);
-    console.log("Log2:" + dtl);
+
     dtl.setMinutes(dtl + 30);
     console.log("Log3:" + dt);
     if (dtl > getToday()) {
@@ -132,6 +132,7 @@ function getUnixTimeLesson(t) {
             lesson = new Date(new Date().setHours(21, 30, 0, 0));
             break;
     }
+    console.log("test: " + lesson);
     return lesson;
 }
 
