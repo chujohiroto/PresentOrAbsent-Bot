@@ -93,7 +93,8 @@ console.log(`Server running at ${PORT}`);
 
 function getMessage(t) {
     var dt = new Date();
-    let dtl = getUnixTimeLesson(t);
+    console.log(t);
+    var dtl = getUnixTimeLesson(t);
     console.log(dtl);
     dt.setMinutes(dtl + 30);
     console.log(dt);
@@ -106,7 +107,7 @@ function getMessage(t) {
 
 
 function getUnixTimeLesson(t) {
-    let lesson;
+    var lesson;
     switch (t) {
         case 1:
             lesson = new Date(new Date().setHours(9, 0, 0, 0));
