@@ -71,10 +71,8 @@ http.createServer((req, res) => {
             let SendMessageObject;
             if (WebhookEventObject.message.type === 'text') {
                 if (WebhookEventObject.message.text == "check") {
-                    SendMessageObject = [{
-                        "type": "flex",
-                        "altText": "This is a flex message",
-                        "contents": {
+                    SendMessageObject = [
+                        {
                             "type": "bubble",
                             "body": {
                                 "type": "box",
@@ -84,147 +82,157 @@ http.createServer((req, res) => {
                                         "type": "text",
                                         "text": "何限目??",
                                         "weight": "bold",
-                                        "wrap": false,
-                                        "color": "#464646",
-                                        "flex": 1,
-                                        "size": "xl",
-                                        "margin": "none",
-                                        "align": "start",
-                                        "gravity": "top"
+                                        "size": "xl"
                                     },
                                     {
+                                        "type": "box",
+                                        "layout": "vertical",
+                                        "margin": "lg",
+                                        "spacing": "sm",
+                                        "contents": [
+                                            {
+                                                "type": "box",
+                                                "layout": "baseline",
+                                                "spacing": "sm",
+                                                "contents": [
+                                                    {
+                                                        "type": "text",
+                                                        "text": "Place",
+                                                        "color": "#aaaaaa",
+                                                        "size": "sm",
+                                                        "flex": 1
+                                                    },
+                                                    {
+                                                        "type": "text",
+                                                        "text": "京都産業大学",
+                                                        "wrap": true,
+                                                        "color": "#666666",
+                                                        "size": "sm",
+                                                        "flex": 5
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "type": "box",
+                                                "layout": "baseline",
+                                                "spacing": "sm",
+                                                "contents": [
+                                                    {
+                                                        "type": "text",
+                                                        "text": "Time",
+                                                        "color": "#aaaaaa",
+                                                        "size": "sm",
+                                                        "flex": 1
+                                                    },
+                                                    {
+                                                        "type": "text",
+                                                        "text": "1限目から8限目",
+                                                        "wrap": true,
+                                                        "color": "#666666",
+                                                        "size": "sm",
+                                                        "flex": 5
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            "footer": {
+                                "type": "box",
+                                "layout": "vertical",
+                                "spacing": "sm",
+                                "contents": [
+                                    {
                                         "type": "button",
+                                        "style": "link",
+                                        "height": "sm",
                                         "action": {
                                             "type": "message",
                                             "label": "1限目",
-                                            "displayText": "1限目"
-                                        },
-                                        "flex": 0,
-                                        "height": "md",
-                                        "style": "primary",
-                                        "color": "#42659a",
-                                        "gravity": "top"
+                                            "text": "1限目"
+                                        }
                                     },
                                     {
                                         "type": "button",
+                                        "style": "link",
+                                        "height": "sm",
                                         "action": {
                                             "type": "message",
                                             "label": "2限目",
-                                            "displayText": "2限目"
-                                        },
-                                        "flex": 0,
-                                        "height": "md",
-                                        "style": "primary",
-                                        "color": "#42659a",
-                                        "gravity": "top"
+                                            "text": "2限目"
+                                        }
                                     },
                                     {
                                         "type": "button",
+                                        "style": "link",
+                                        "height": "sm",
                                         "action": {
                                             "type": "message",
                                             "label": "3限目",
-                                            "displayText": "3限目"
-                                        },
-                                        "flex": 0,
-                                        "height": "md",
-                                        "style": "primary",
-                                        "color": "#42659a",
-                                        "gravity": "top"
+                                            "text": "3限目"
+                                        }
                                     },
                                     {
                                         "type": "button",
+                                        "style": "link",
+                                        "height": "sm",
                                         "action": {
                                             "type": "message",
                                             "label": "4限目",
-                                            "displayText": "4限目"
-                                        },
-                                        "flex": 0,
-                                        "height": "md",
-                                        "style": "primary",
-                                        "color": "#42659a",
-                                        "gravity": "top"
+                                            "text": "4限目"
+                                        }
                                     },
                                     {
                                         "type": "button",
+                                        "style": "link",
+                                        "height": "sm",
                                         "action": {
                                             "type": "message",
                                             "label": "5限目",
-                                            "displayText": "5限目"
-                                        },
-                                        "flex": 0,
-                                        "height": "md",
-                                        "style": "primary",
-                                        "color": "#42659a",
-                                        "gravity": "top"
+                                            "text": "5限目"
+                                        }
                                     },
                                     {
                                         "type": "button",
+                                        "style": "link",
+                                        "height": "sm",
                                         "action": {
                                             "type": "message",
                                             "label": "6限目",
-                                            "displayText": "6限目"
-                                        },
-                                        "flex": 0,
-                                        "height": "md",
-                                        "style": "primary",
-                                        "color": "#42659a",
-                                        "gravity": "top"
+                                            "text": "6限目"
+                                        }
                                     },
                                     {
                                         "type": "button",
+                                        "style": "link",
+                                        "height": "sm",
                                         "action": {
                                             "type": "message",
                                             "label": "7限目",
-                                            "displayText": "7限目"
-                                        },
-                                        "flex": 0,
-                                        "height": "md",
-                                        "style": "primary",
-                                        "color": "#42659a",
-                                        "gravity": "top"
+                                            "text": "7限目"
+                                        }
                                     },
                                     {
                                         "type": "button",
+                                        "style": "link",
+                                        "height": "sm",
                                         "action": {
                                             "type": "message",
                                             "label": "8限目",
-                                            "displayText": "8限目"
-                                        },
-                                        "flex": 0,
-                                        "height": "md",
-                                        "style": "primary",
-                                        "color": "#42659a",
-                                        "gravity": "top"
+                                            "text": "8限目"
+                                        }
+                                    },
+
+                                    {
+                                        "type": "spacer",
+                                        "size": "sm"
                                     }
                                 ],
-                                "flex": 1,
-                                "spacing": "none",
-                                "margin": "md"
-                            },
-                            "styles": {
-                                "header": {
-                                    "backgroundColor": "#FFFFFF",
-                                    "separator": false,
-                                    "separatorColor": "#FFFFFF"
-                                },
-                                "hero": {
-                                    "backgroundColor": "#FFFFFF",
-                                    "separator": false,
-                                    "separatorColor": "#FFFFFF"
-                                },
-                                "body": {
-                                    "backgroundColor": "#FFFFFF",
-                                    "separator": false,
-                                    "separatorColor": "#FFFFFF"
-                                },
-                                "footer": {
-                                    "backgroundColor": "#FFFFFF",
-                                    "separator": false,
-                                    "separatorColor": "#FFFFFF"
-                                }
+                                "flex": 0
                             }
-                        },
-                    }]
+                        }
+                    ]
                 }
                 else {
                     SendMessageObject = [{
