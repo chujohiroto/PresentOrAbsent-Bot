@@ -108,6 +108,7 @@ function getUnixTimeLesson(t) {
     var lesson;
     switch (t) {
         case 1:
+            console.log("log6:1");
             lesson = new Date(new Date().setHours(9, 0, 0, 0));
             break;
         case 2:
