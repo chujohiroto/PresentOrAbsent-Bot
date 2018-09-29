@@ -4,7 +4,6 @@ const http = require('http');
 const https = require('https');
 const crypto = require('crypto');
 
-
 const HOST = 'api.line.me';
 const REPLY_PATH = '/v2/bot/message/reply';//リプライ用
 const CH_SECRET = 'ea46a5b3b13d5c720709adbc1762782c'; //Channel Secretを指定
@@ -49,15 +48,6 @@ const client = (replyToken, SendMessageObject) => {
         req.end();
     });
 };
-
-http.createServer((req, res) => {
-    if (req.url !== '/bot' || req.method !== 'POST') {
-        res.writeHead(200, { 'Content-Type': 'text/plain' });
-        res.end('');
-    }
-
-
-}).listen(PORT);
 
 http.createServer((req, res) => {
     if (req.url !== '/webhook' || req.method !== 'POST') {
