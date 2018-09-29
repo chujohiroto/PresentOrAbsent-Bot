@@ -93,6 +93,7 @@ console.log(`Server running at ${PORT}`);
 function getMessage(t) {
     var dt = new Date();
     dt.setMinutes(getUnixTimeLesson(t) + 30);
+    console.log(dt);
     if (dt > getToday()) {
         return "間に合うよ";
     } else {
