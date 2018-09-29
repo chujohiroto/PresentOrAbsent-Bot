@@ -75,6 +75,7 @@ http.createServer((req, res) => {
                         type: "flex",
                         altText: "This is a flex message",
                         contents: {
+                            "type": "flex",
                             "body": {
                                 "type": "box",
                                 "layout": "vertical",
