@@ -100,8 +100,8 @@ function getMessage(t) {
 
     var t = getnow().getTime() - getToday().getTime();
 
-    //var ti = h - t;
-    var ti = dtl.getTime() - getnow().getTime();
+    var ti = h - t;
+    //var ti = dtl.getTime() - getnow().getTime();
 
     console.log(ti);
     if (ti > 0) {
