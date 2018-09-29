@@ -50,7 +50,7 @@ const client = (replyToken, SendMessageObject) => {
 };
 
 http.createServer((req, res) => {
-    if (req.url !== '/' || req.method !== 'POST') {
+    if (req.url !== '/webhook' || req.method !== 'POST') {
         res.writeHead(200, { 'Content-Type': 'text/plain' });
         res.end('');
     }
