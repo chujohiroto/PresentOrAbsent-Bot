@@ -76,7 +76,7 @@ http.createServer((req, res) => {
                 }];
             }
             let message = getMessage(WebhookEventObject.message.text);
-            console.log(message);
+
             client(WebhookEventObject.replyToken, SendMessageObject)
                 .then((message) => {
                     console.log(message);
