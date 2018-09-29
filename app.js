@@ -95,6 +95,7 @@ function getMessage(t) {
     var dtl = getTimeLesson(t);
     dtl.setMinutes(dtl.getMinutes() - 30);
     var ti = dtl.getTime() - getToday().getTime() / (1000 * 60);
+    console.log(ti);
     if (ti > 0) {
         return "間に合うよ";
     } else {
