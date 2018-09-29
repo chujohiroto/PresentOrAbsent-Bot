@@ -95,7 +95,7 @@ function getMessage(t) {
     var dtl = getUnixTimeLesson(t);
 
     dtl.setMinutes(dtl + 30);
-    console.log("Log3:" + dt);
+    console.log("Log3:" + dtl);
     if (dtl > getToday()) {
         return "間に合うよ";
     } else {
