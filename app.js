@@ -92,6 +92,7 @@ http.createServer((req, res) => {
 console.log(`Server running at ${PORT}`);
 
 function getMessage(t) {
+    var t = t.slice(0, 1);
     var dtl = getTimeLesson(t);
 
     dtl.setMinutes(dtl.getMinutes() - 30);
