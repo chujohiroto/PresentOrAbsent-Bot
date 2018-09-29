@@ -92,10 +92,8 @@ http.createServer((req, res) => {
 console.log(`Server running at ${PORT}`);
 
 function getMessage(t) {
-    var dtl = getUnixTimeLesson(t);
-    console.log(dtl);
+    var dtl = getTimeLesson(t);
     dtl.setMinutes(dtl.getMinutes() - 30);
-    console.log(dtl);
     if (dtl > getToday()) {
         return "間に合うよ";
     } else {
@@ -104,7 +102,7 @@ function getMessage(t) {
 }
 
 
-function getUnixTimeLesson(t) {
+function getTimeLesson(t) {
     var lesson;
     var tint = Number(t)
     switch (tint) {
@@ -132,11 +130,14 @@ function getUnixTimeLesson(t) {
         case 8:
             lesson = new Date(new Date().setHours(21, 30, 0, 0));
             break;
+        default:
+            break;
     }
     return lesson;
 }
 
 function getToday() {
     var today = new Date(new Date().setHours(0, 0, 0, 0));
-    return today;
+    var now = new Date();
+    return now;
 }
